@@ -8,17 +8,15 @@ public class Main {
         boolean run=true;
         while (run) {
             int wrk = choice();
-            if (wrk <= 3) {
-                if (wrk == 1) {
-                    bets();
-
-                } else if (wrk==2) {
-                    play(name);
-                }else{
-                    run=false;
-                }
-            }else {
-                System.err.println("Enter a valid Choice!");
+            switch (wrk) {
+                case 1:bets();                    
+                    break;
+                case 2:play(name);
+                    break;
+                case 3:run=false;
+                    System.out.println("Good Bye,Have a Nice Day!");
+                    break;
+                default:System.out.println("Enter a valid choice!");
             }
         }
     }
@@ -52,6 +50,6 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Enter a valid choice!");
         }        
-        return 0;
+        return choice();
     }
 }
